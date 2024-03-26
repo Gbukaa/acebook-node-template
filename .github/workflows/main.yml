@@ -15,21 +15,22 @@ jobs:
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: eu-west-2
 
-      - name: Archive application
-        run: |
-          zip -r application.zip .
+      # - name: Archive application
+      #   run: |
+      #     zip -r application.zip .
 
-      - name: Upload to AWS S3
-        run: |
-          aws s3 cp application.zip s3://yellow-banana-boys/application.zip
+      # - name: Upload to AWS S3
+      #   run: |
+      #     aws s3 cp application.zip s3://yellow-banana-boys/application.zip
 
-      - name: Trigger CodeDeploy deployment
-        run: |
-          aws deploy create-deployment --application-name yellow-banana-boys-2024-app --deployment-group-name Production --s3-location bucket=yellow-banana-boys,key=application.zip,bundleType=zip
-
-
-          # - name: Sync files to S3 bucket
-          #   run: |
-          #     aws s3 sync build s3://yellow-banana-boys --delete
-    
+      # - name: Trigger CodeDeploy deployment
+      #   run: |
+      #     aws deploy create-deployment --application-name yellow-banana-boys-2024-app --deployment-group-name Production --s3-location bucket=yellow-banana-boys,
           
+
+
+      - name: Sync files to S3 bucket
+        run: |
+          aws s3 sync build s3://yellow-banana-boys --delete
+    
+          # key=application.zip, bundleType=zip
