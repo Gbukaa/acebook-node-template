@@ -25,4 +25,4 @@ jobs:
 
       - name: Trigger CodeDeploy deployment
         run: |
-          aws deploy create-deployment --application-name yellow-banana-boys-2024-app --deployment-group-name Production --s3-location bucket=yellow-banana-boys, key=application.zip, bundleType=zip
+          aws deploy create-deployment --application-name yellow-banana-boys-2024-app --deployment-group-name Production --s3-location bucket=yellow-banana-boys,key=application.zip,bundleType=zip
