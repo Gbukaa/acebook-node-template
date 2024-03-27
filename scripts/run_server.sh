@@ -1,3 +1,3 @@
 cd /var/www/myapp
 source ~/.bash_profile
-npm start
+pm2 start ./bin/www --name myapp
