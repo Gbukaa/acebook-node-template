@@ -1,1 +1,1 @@
-npm run start:test
+sudo npm run start:test

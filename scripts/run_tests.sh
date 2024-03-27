@@ -1,1 +1,1 @@
-npm test
+sudo npm test
