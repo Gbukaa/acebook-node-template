@@ -11,18 +11,21 @@ permissions:
     mode: 755
 hooks:
   BeforeInstall:
-    - location: scripts/
+    - location: scripts/install_mongodb.sh
+      timeout: 60
+      runas: root
+    - location: scripts/install_node.sh
       timeout: 60
       runas: root
   AfterInstall:
-    - location: scripts/
-      timeout: 60
-      runas: root
+    # - location: scripts/
+    #   timeout: 60
+    #   runas: root
   ApplicationStart:
-    - location: scripts/
+    - location: scripts/run_server.sh
       timeout: 60
       runas: root
   ApplicationStop:
-    - location: scripts/a
-      timeout: 60
-      runas: root
+    # - location: scripts/
+    #   timeout: 60
+    #   runas: root
