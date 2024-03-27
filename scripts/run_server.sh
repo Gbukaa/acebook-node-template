@@ -1,1 +1,2 @@
-# sudo npm start
+nvm install 16
+npm start
